@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0b12">
+  <meta name="description" content="Create stylish text preview images with fonts, colors, backgrounds and effects.">
+  <title>FontForge Studio — Stylish Text Image Maker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Nosifer&family=Metal+Mania&family=Rubik+Wet+Paint&family=Pirata+One&family=UnifrakturMaguntia&family=Permanent+Marker&family=Bebas+Neue&family=Anton&family=Oswald:wght@400;500;600;700&family=Orbitron:wght@400;500;700;900&family=Press+Start+2P&family=Pacifico&family=Lobster&family=Playfair+Display:wght@400;700;900&family=Cinzel:wght@400;700;900&family=Russo+One&family=Righteous&family=Special+Elite&family=Black+Ops+One&family=Comfortaa:wght@400;700&family=Roboto+Mono:wght@400;700&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="FontForge Studio home"><span class="brand-mark">F</span><span>FONT<span class="brand-accent">FORGE</span><small>STYLISH TEXT STUDIO</small></span></a>
+    <span class="top-tag"><span class="status-dot"></span> FREE CREATOR</span>
+  </header>
+
+  <main class="shell">
+    <section class="intro">
+      <p class="eyebrow">YOUR WORDS. YOUR STYLE.</p>
+      <h1>Make text look <span>legendary.</span></h1>
+      <p class="subhead">Choose a font, customize the look, and export a high-quality PNG preview in seconds.</p>
+    </section>
+
+    <section class="workspace">
+      <div class="controls panel">
+        <div class="panel-heading"><div><span class="step">01</span><h2>Design your text</h2></div><button id="resetBtn" class="text-button" type="button">Reset</button></div>
+        <label class="field-label" for="textInput">Your text</label>
+        <textarea id="textInput" rows="2" maxlength="120" placeholder="Type something stylish...">SHADOW NAME</textarea>
+        <div class="field-meta"><span>Use up to 120 characters</span><span id="charCount">11 / 120</span></div>
+
+        <label class="field-label" for="fontSelect">Choose a font</label>
+        <select id="fontSelect">
+          <optgroup label="Horror & Dark">
+            <option value="Creepster">Creepster — Creepy</option>
+            <option value="Nosifer">Nosifer — Dripping horror</option>
+            <option value="Metal Mania">Metal Mania — Heavy metal</option>
+            <option value="Rubik Wet Paint">Rubik Wet Paint — Splattered</option>
+            <option value="Pirata One">Pirata One — Gothic</option>
+            <option value="UnifrakturMaguntia">UnifrakturMaguntia — Blackletter</option>
+            <option value="Special Elite">Special Elite — Typewriter</option>
+            <option value="Black Ops One">Black Ops One — Tactical</option>
+          </optgroup>
+          <optgroup label="Bold & Modern">
+            <option value="Bebas Neue">Bebas Neue — Tall</option>
+            <option value="Anton">Anton — Heavy</option>
+            <option value="Oswald">Oswald — Condensed</option>
+            <option value="Russo One">Russo One — Strong</option>
+            <option value="Righteous">Righteous — Retro</option>
+            <option value="Orbitron">Orbitron — Futuristic</option>
+            <option value="Press Start 2P">Press Start 2P — Pixel</option>
+            <option value="Montserrat">Montserrat — Clean</option>
+            <option value="Roboto Mono">Roboto Mono — Monospace</option>
+          </optgroup>
+          <optgroup label="Elegant & Handwritten">
+            <option value="Cinzel">Cinzel — Cinematic</option>
+            <option value="Playfair Display">Playfair Display — Elegant</option>
+            <option value="Pacifico">Pacifico — Script</option>
+            <option value="Lobster">Lobster — Retro script</option>
+            <option value="Permanent Marker">Permanent Marker — Marker</option>
+            <option value="Comfortaa">Comfortaa — Rounded</option>
+          </optgroup>
+        </select>
+        <div class="import-font-row">
+          <label class="import-font-button" for="fontFileInput"><span>＋</span> Import your font</label>
+          <input id="fontFileInput" type="file" accept=".ttf,.otf,.woff,.woff2,font/ttf,font/otf,font/woff,font/woff2" multiple>
+          <span class="import-font-help">TTF, OTF, WOFF, WOFF2</span>
+        </div>
+        <p id="fontImportStatus" class="font-import-status" aria-live="polite">Import a font file from your device to use it here.</p>
+        <div id="fontSample" class="font-sample">SHADOW NAME</div>
+
+        <div class="two-col">
+          <div><label class="field-label" for="textColor">Text color</label><div class="color-control"><input id="textColor" type="color" value="#f7f3ff"><span id="textColorValue">#F7F3FF</span></div></div>
+          <div><label class="field-label" for="bgColor">Background</label><div class="color-control"><input id="bgColor" type="color" value="#11111b"><span id="bgColorValue">#11111B</span></div></div>
+        </div>
+        <label class="field-label" for="backgroundMode">Background style</label>
+        <select id="backgroundMode"><option value="solid">Solid color</option><option value="gradient" selected>Midnight gradient</option><option value="transparent">Transparent</option></select>
+
+        <div class="range-head"><label class="field-label" for="fontSize">Text size</label><output id="fontSizeValue">96 px</output></div>
+        <input id="fontSize" type="range" min="28" max="180" value="96">
+        <div class="range-head"><label class="field-label" for="letterSpacing">Letter spacing</label><output id="letterSpacingValue">2 px</output></div>
+        <input id="letterSpacing" type="range" min="-2" max="12" value="2">
+
+        <label class="field-label" for="effectSelect">Text effect</label>
+        <select id="effectSelect"><option value="none">Clean</option><option value="glow" selected>Neon glow</option><option value="shadow">Soft shadow</option><option value="outline">Outline</option></select>
+        <div class="switch-row"><div><strong>Uppercase</strong><small>Convert text to capital letters</small></div><label class="switch"><input id="uppercase" type="checkbox" checked><span></span></label></div>
+        <button id="generateBtn" class="primary-button" type="button"><span>✦</span> Generate preview</button>
+      </div>
+
+      <div class="preview-column">
+        <div class="preview-panel panel">
+          <div class="panel-heading"><div><span class="step">02</span><h2>Live preview</h2></div><span class="live-pill"><span class="status-dot"></span> LIVE</span></div>
+          <div class="canvas-wrap" id="canvasWrap">
+            <canvas id="previewCanvas" width="1200" height="675" aria-label="Stylish text image preview"></canvas>
+            <div id="emptyHint" class="empty-hint" hidden>Enter your text to see the preview</div>
+          </div>
+          <div class="preview-footer"><span><span class="mini-icon">▧</span> 1200 × 675 px</span><span id="statusText">Ready to create</span></div>
+        </div>
+        <div class="export-panel panel">
+          <div class="export-copy"><div class="export-icon">↓</div><div><h3>Ready to export?</h3><p>Download your design as a crisp PNG image.</p></div></div>
+          <button id="downloadBtn" class="download-button" type="button">Download PNG <span>↗</span></button>
+        </div>
+        <p class="note"><span>✦</span> Fonts load from Google Fonts, so an internet connection is needed for the full font collection.</p>
+      </div>
+    </section>
+    <footer><span>FONTFORGE STUDIO</span><span>Made for your next great design ✦</span></footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
